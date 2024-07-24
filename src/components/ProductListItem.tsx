@@ -12,7 +12,11 @@ type ProductListItemProps = {
 const ProductListItem = ({ product }: ProductListItemProps) => {
     return (
       <View style={styles.container}>
-        <Image source={{ uri: product.image || defaultPizzaImage }} style={styles.image}/>
+        <Image 
+        source={{ uri: product.image || defaultPizzaImage }} 
+        style={styles.image}
+        resizeMode='contain'
+        />
         <Text style={styles.title}>{product.name}</Text>
         <Text style={styles.price}>{product.price}</Text>
       </View>
@@ -23,11 +27,13 @@ const ProductListItem = ({ product }: ProductListItemProps) => {
 
   const styles = StyleSheet.create({
     container: {
-      marginTop: 10,
+      margin: 10,
       marginHorizontal: 10,
-      backgroundColor: 'white',
+      backgroundColor: '#f0ffff',
       padding: 10,
       borderRadius: 20,
+      flex: 1,
+      maxWidth: '50%'
     },
     separator: {
       marginVertical: 30,
