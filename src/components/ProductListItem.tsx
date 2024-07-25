@@ -12,7 +12,7 @@ type ProductListItemProps = {
 
 const ProductListItem = ({ product }: ProductListItemProps) => {
     return (
-      <Link href={"/product"} asChild>
+      <Link href={`/menu/${product.id}`} asChild>
         <Pressable style={styles.container}>
           <Image 
           source={{ uri: product.image || defaultPizzaImage }} 
